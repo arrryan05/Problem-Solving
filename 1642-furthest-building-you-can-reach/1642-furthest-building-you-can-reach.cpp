@@ -15,7 +15,8 @@ public:
                 return i;
             }
         }
-        return heights.size()-1;
+        int ans = heights.size()-1;
+        return ans;
     }   
     
 };
