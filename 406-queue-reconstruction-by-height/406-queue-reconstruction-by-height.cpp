@@ -5,16 +5,13 @@ class Solution {
     }
 public:
     vector<vector<int>> reconstructQueue(vector<vector<int>>& people) {        
+        int n = people.size();
         sort(people.begin(), people.end(), cmp);
-        vector<vector<int>> peopleAfter;
-        for (int i = 0; i < people.size(); i++) {
-            if (people[i][1] == peopleAfter.size()) {
-                peopleAfter.push_back(people[i]);
-            } else {
-                peopleAfter.insert(peopleAfter.begin() + people[i][1],
-                                   people[i]);
-            }
+        vector<vector<int>> res;
+        for(int i = 0; i < n; i++){
+            int idx = people[i][1];
+            res.insert(res.begin() + idx, people[i]);
         }
-        return peopleAfter;
+        return res;
     }
 };
