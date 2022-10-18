@@ -7,46 +7,17 @@ using namespace std;
 class Solution {
   public:
     void printSquare(int n) {
-        for(int i=n;i>0;i--){
-            for(int j=n;j>0;j--){
-                if(j>i){
-                    cout<<j<<" ";
-                }
-                else{
-                    cout<<i<<" ";
-                }
-            }
-            int j=i;
-            for(int k=2;k<=n;k++){
-                if(k>j){
-                    cout<<k<<" ";
-                }
-                else{
-                    cout<<j<<" ";
-                }
+        int i=0,j=0,k;
+        for(int i=1;i<2*n;i++){
+            k = n;
+            for(int j=1;j<2*n;j++){
+                cout<<k<<" ";
+                if(i>j) k--;
+                if(i+j>=2*n) k++;
             }
             cout<<endl;
         }
-        for(int i=2;i<=n;i++){
-            for(int j=n;j>0;j--){
-                if(j>i){
-                    cout<<j<<" ";
-                }
-                else{
-                    cout<<i<<" ";
-                }
-            }
-            int j=i;
-            for(int k=2;k<=n;k++){
-                if(j>k){
-                    cout<<j<<" ";
-                }
-                else{
-                    cout<<k<<" ";
-                }
-            }
-            cout<<endl;
-        }
+        
     }
 };
 
