@@ -9,14 +9,14 @@ class Solution{
     int numberOfSubarrays(vector<int>& arr, int N, int target){
         // code here
         unordered_map<int, int> prefix_sums;
-    prefix_sums[0] = 1;
-    int sum = 0, count = 0;
-    for(int i=0;i<N;i++){
-        sum+=arr[i];
-        count += prefix_sums[sum - target];
-        prefix_sums[sum]++;
-    }
-    return count;
+        prefix_sums[0]=1;
+        int sum = 0, count = 0;
+        for(int i=0;i<N;i++){
+            sum+=arr[i];
+            count += prefix_sums[sum - target];
+            prefix_sums[sum]++;
+        }
+        return count;
     }
 };
 
