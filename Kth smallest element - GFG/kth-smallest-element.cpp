@@ -13,10 +13,19 @@ class Solution{
     // l : starting index of the array i.e 0
     // r : ending index of the array i.e size-1
     // k : find kth smallest element and return using this function
-    int kthSmallest(int arr[], int l, int r, int k) {
+    int kthSmallest(int a[], int l, int r, int k) {
         //code here
-        sort(arr,arr+(r-l)+1);
-        return arr[k-1];
+        priority_queue<int> p;
+        for(int i =l;i<=r;i++)
+        {
+            p.push(-1*a[i]);
+        }
+        
+        for(int i =1;i<k;i++)
+        {
+            p.pop();
+        }
+        return -1*p.top();
     }
 };
 
